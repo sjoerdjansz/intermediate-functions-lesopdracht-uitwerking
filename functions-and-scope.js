@@ -14,6 +14,19 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+
+// 1a en 1b in één.
+const checkCumLaude = (arr) => {
+    let cumLaudeCount = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 8) {
+            cumLaudeCount++;
+        }
+    }
+    return cumLaudeCount;
+};
+
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -27,8 +40,9 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-
-
+// ZIE BOVENSTAANDE UITWERKING.
+console.log(checkCumLaude(grades));
+console.log(checkCumLaude([8, 9, 4, 6, 10]));
 
 /* Opdracht  2: Gemiddeld cijfer */
 
@@ -43,6 +57,17 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // ---- Verwachte uitkomst: 6.642857142857143
 
 
+// ------- OPDRACHT 1a 1b en 1c samen ------- //
+const getAverageGrade = (arr) => {
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return parseFloat((sum / arr.length).toFixed(2));
+};
+
+
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
@@ -53,13 +78,15 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
 
+// ------ UITWERKING van 1a, 1b, 1c boven ------ //
+
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-
-
+// ------ UITWERKING van 2a, 2b, 2c boven ------ //
+console.log(getAverageGrade(grades));
 
 /* Bonusopdracht: hoogste cijfer */
 
@@ -69,6 +96,17 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Op welke conditie moet ik checken?
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
 // Log het antwoord in de terminal.
+
+// ------- OPDRACHT 3a en 3b samen ------- //
+const highestGrade = (arr) => {
+    let currentMax = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > currentMax) {
+            currentMax = arr[i];
+        }
+    }
+    return currentMax;
+};
 
 // ---- Verwachte uitkomst: 9
 
@@ -82,3 +120,8 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+// ------- OPDRACHT 3a en 3b samen ------- //
+console.log(highestGrade(grades));
+console.log(highestGrade([8, 9, 4, 6, 10]));
+console.log(highestGrade([6, 4, 5]));
